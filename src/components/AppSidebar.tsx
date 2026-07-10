@@ -4,6 +4,7 @@ import {
   Mail,
   FileText,
   CalendarClock,
+  CalendarDays,
   Search,
   MessageSquare,
   History,
