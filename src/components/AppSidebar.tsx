@@ -106,6 +106,12 @@ export function AppSidebar() {
           <SidebarGroupLabel>AI Tools</SidebarGroupLabel>
           <SidebarGroupContent>{renderItems(aiTools)}</SidebarGroupContent>
         </SidebarGroup>
+        {role === "student" && (
+          <SidebarGroup>
+            <SidebarGroupLabel>Student</SidebarGroupLabel>
+            <SidebarGroupContent>{renderItems(studentTools)}</SidebarGroupContent>
+          </SidebarGroup>
+        )}
         <SidebarGroup>
           <SidebarGroupLabel>Library</SidebarGroupLabel>
           <SidebarGroupContent>{renderItems(library)}</SidebarGroupContent>
