@@ -4,6 +4,7 @@ import {
   Mail,
   FileText,
   CalendarClock,
+  CalendarDays,
   Search,
   MessageSquare,
   History,
@@ -33,6 +34,10 @@ const aiTools = [
   { title: "AI Task Planner", url: "/planner", icon: CalendarClock },
   { title: "AI Research Assistant", url: "/research", icon: Search },
   { title: "AI Chatbot", url: "/chat", icon: MessageSquare },
+];
+
+const studentTools = [
+  { title: "Lecture Timetable", url: "/timetable", icon: CalendarDays },
 ];
 
 const library = [
@@ -101,6 +106,12 @@ export function AppSidebar() {
           <SidebarGroupLabel>AI Tools</SidebarGroupLabel>
           <SidebarGroupContent>{renderItems(aiTools)}</SidebarGroupContent>
         </SidebarGroup>
+        {role === "student" && (
+          <SidebarGroup>
+            <SidebarGroupLabel>Student</SidebarGroupLabel>
+            <SidebarGroupContent>{renderItems(studentTools)}</SidebarGroupContent>
+          </SidebarGroup>
+        )}
         <SidebarGroup>
           <SidebarGroupLabel>Library</SidebarGroupLabel>
           <SidebarGroupContent>{renderItems(library)}</SidebarGroupContent>
