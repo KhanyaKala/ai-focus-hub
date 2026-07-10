@@ -36,6 +36,10 @@ const aiTools = [
   { title: "AI Chatbot", url: "/chat", icon: MessageSquare },
 ];
 
+const studentTools = [
+  { title: "Lecture Timetable", url: "/timetable", icon: CalendarDays },
+];
+
 const library = [
   { title: "History", url: "/history", icon: History },
   { title: "Saved Documents", url: "/saved", icon: BookmarkCheck },
