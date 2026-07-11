@@ -24,7 +24,7 @@ export function RoleGate({ children }: { children: React.ReactNode }) {
       icon: <Briefcase className="h-7 w-7" />,
       title: "Professional",
       blurb: "Draft client emails, summarise meetings, plan sprints, and prep for wins.",
-      grad: "from-fuchsia-500 via-pink-500 to-orange-400",
+      grad: "from-teal-500 via-emerald-500 to-green-400",
       tags: ["Client emails", "Meeting notes", "Weekly plan", "Research"],
     },
   ];
