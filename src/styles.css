@@ -52,12 +52,12 @@
 
 :root {
   --radius: 0.875rem;
-  --background: oklch(0.98 0.01 200);
-  --foreground: oklch(0.18 0.04 220);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.18 0.04 220);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.18 0.04 220);
+  --background: oklch(0.93 0.02 200);
+  --foreground: oklch(0.16 0.04 220);
+  --card: oklch(0.97 0.015 200);
+  --card-foreground: oklch(0.16 0.04 220);
+  --popover: oklch(0.97 0.015 200);
+  --popover-foreground: oklch(0.16 0.04 220);
   /* Deep teal-blue */
   --primary: oklch(0.5 0.13 210);
   --primary-foreground: oklch(0.99 0 0);
