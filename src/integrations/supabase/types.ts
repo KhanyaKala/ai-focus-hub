@@ -14,7 +14,42 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      ms_connections: {
+        Row: {
+          access_token: string
+          created_at: string
+          expires_at: string
+          ms_display_name: string | null
+          ms_email: string | null
+          refresh_token: string
+          scope: string | null
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          access_token: string
+          created_at?: string
+          expires_at: string
+          ms_display_name?: string | null
+          ms_email?: string | null
+          refresh_token: string
+          scope?: string | null
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          access_token?: string
+          created_at?: string
+          expires_at?: string
+          ms_display_name?: string | null
+          ms_email?: string | null
+          refresh_token?: string
+          scope?: string | null
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
