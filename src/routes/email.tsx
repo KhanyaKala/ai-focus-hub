@@ -63,6 +63,9 @@ Return only the email body in Markdown, starting with a subject line as a headin
             subject: v.subject || ex,
           }))
         }
+        renderAfterOutput={(output, values) => (
+          <SendActions output={output} recipient={values.recipient} fallbackSubject={values.subject} />
+        )}
       >
         {({ values, setValues, disabled }) => (
           <>
