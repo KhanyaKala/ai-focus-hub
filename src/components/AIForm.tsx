@@ -40,6 +40,7 @@ export function AIForm<T extends Record<string, unknown>>({
   submitLabel = "Generate with AI",
   examples,
   onFillExample,
+  renderAfterOutput,
 }: Props<T>) {
   const { role } = useRole();
   const [values, setValuesState] = useState<T>(initialValues);
