@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Mail } from "lucide-react";
 import { PageShell } from "@/components/PageShell";
 import { AIForm } from "@/components/AIForm";
+import { SendActions } from "@/components/SendActions";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
