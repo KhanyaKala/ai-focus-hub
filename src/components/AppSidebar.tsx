@@ -122,6 +122,10 @@ export function AppSidebar() {
           </SidebarGroup>
         )}
         <SidebarGroup>
+          <SidebarGroupLabel>Planning</SidebarGroupLabel>
+          <SidebarGroupContent>{renderItems(everyone)}</SidebarGroupContent>
+        </SidebarGroup>
+        <SidebarGroup>
           <SidebarGroupLabel>Library</SidebarGroupLabel>
           <SidebarGroupContent>{renderItems(library)}</SidebarGroupContent>
         </SidebarGroup>
