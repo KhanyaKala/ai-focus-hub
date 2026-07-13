@@ -26,6 +26,7 @@ type Props<T> = {
   submitLabel?: string;
   examples?: { student?: string[]; professional?: string[] };
   onFillExample?: (example: string, setValues: (u: (v: T) => T) => void) => void;
+  renderAfterOutput?: (output: string, values: T) => ReactNode;
 };
 
 export function AIForm<T extends Record<string, unknown>>({
