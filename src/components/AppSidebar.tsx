@@ -12,6 +12,9 @@ import {
   Settings,
   HelpCircle,
   Sparkles,
+  FlaskConical,
+  Target,
+  AlarmClock,
 } from "lucide-react";
 import {
   Sidebar,
