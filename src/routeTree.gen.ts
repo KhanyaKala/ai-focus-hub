@@ -13,11 +13,14 @@ import { Route as TimetableRouteImport } from './routes/timetable'
 import { Route as SettingsRouteImport } from './routes/settings'
 import { Route as SavedRouteImport } from './routes/saved'
 import { Route as ResearchRouteImport } from './routes/research'
+import { Route as PracticalsRouteImport } from './routes/practicals'
 import { Route as PlannerRouteImport } from './routes/planner'
+import { Route as OutcomesRouteImport } from './routes/outcomes'
 import { Route as NotesRouteImport } from './routes/notes'
 import { Route as HistoryRouteImport } from './routes/history'
 import { Route as HelpRouteImport } from './routes/help'
 import { Route as EmailRouteImport } from './routes/email'
+import { Route as DeadlinesRouteImport } from './routes/deadlines'
 import { Route as ChatRouteImport } from './routes/chat'
 import { Route as IndexRouteImport } from './routes/index'
 
@@ -41,9 +44,19 @@ const ResearchRoute = ResearchRouteImport.update({
   path: '/research',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PracticalsRoute = PracticalsRouteImport.update({
+  id: '/practicals',
+  path: '/practicals',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const PlannerRoute = PlannerRouteImport.update({
   id: '/planner',
   path: '/planner',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OutcomesRoute = OutcomesRouteImport.update({
+  id: '/outcomes',
+  path: '/outcomes',
   getParentRoute: () => rootRouteImport,
 } as any)
 const NotesRoute = NotesRouteImport.update({
@@ -66,6 +79,11 @@ const EmailRoute = EmailRouteImport.update({
   path: '/email',
   getParentRoute: () => rootRouteImport,
 } as any)
+const DeadlinesRoute = DeadlinesRouteImport.update({
+  id: '/deadlines',
+  path: '/deadlines',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ChatRoute = ChatRouteImport.update({
   id: '/chat',
   path: '/chat',
@@ -80,11 +98,14 @@ const IndexRoute = IndexRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/chat': typeof ChatRoute
+  '/deadlines': typeof DeadlinesRoute
   '/email': typeof EmailRoute
   '/help': typeof HelpRoute
   '/history': typeof HistoryRoute
   '/notes': typeof NotesRoute
+  '/outcomes': typeof OutcomesRoute
   '/planner': typeof PlannerRoute
+  '/practicals': typeof PracticalsRoute
   '/research': typeof ResearchRoute
   '/saved': typeof SavedRoute
   '/settings': typeof SettingsRoute
@@ -93,11 +114,14 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/chat': typeof ChatRoute
+  '/deadlines': typeof DeadlinesRoute
   '/email': typeof EmailRoute
   '/help': typeof HelpRoute
   '/history': typeof HistoryRoute
   '/notes': typeof NotesRoute
+  '/outcomes': typeof OutcomesRoute
   '/planner': typeof PlannerRoute
+  '/practicals': typeof PracticalsRoute
   '/research': typeof ResearchRoute
   '/saved': typeof SavedRoute
   '/settings': typeof SettingsRoute
@@ -107,11 +131,14 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/chat': typeof ChatRoute
+  '/deadlines': typeof DeadlinesRoute
   '/email': typeof EmailRoute
   '/help': typeof HelpRoute
   '/history': typeof HistoryRoute
   '/notes': typeof NotesRoute
+  '/outcomes': typeof OutcomesRoute
   '/planner': typeof PlannerRoute
+  '/practicals': typeof PracticalsRoute
   '/research': typeof ResearchRoute
   '/saved': typeof SavedRoute
   '/settings': typeof SettingsRoute
@@ -122,11 +149,14 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/chat'
+    | '/deadlines'
     | '/email'
     | '/help'
     | '/history'
     | '/notes'
+    | '/outcomes'
     | '/planner'
+    | '/practicals'
     | '/research'
     | '/saved'
     | '/settings'
@@ -135,11 +165,14 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/chat'
+    | '/deadlines'
     | '/email'
     | '/help'
     | '/history'
     | '/notes'
+    | '/outcomes'
     | '/planner'
+    | '/practicals'
     | '/research'
     | '/saved'
     | '/settings'
@@ -148,11 +181,14 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/chat'
+    | '/deadlines'
     | '/email'
     | '/help'
     | '/history'
     | '/notes'
+    | '/outcomes'
     | '/planner'
+    | '/practicals'
     | '/research'
     | '/saved'
     | '/settings'
@@ -162,11 +198,14 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ChatRoute: typeof ChatRoute
+  DeadlinesRoute: typeof DeadlinesRoute
   EmailRoute: typeof EmailRoute
   HelpRoute: typeof HelpRoute
   HistoryRoute: typeof HistoryRoute
   NotesRoute: typeof NotesRoute
+  OutcomesRoute: typeof OutcomesRoute
   PlannerRoute: typeof PlannerRoute
+  PracticalsRoute: typeof PracticalsRoute
   ResearchRoute: typeof ResearchRoute
   SavedRoute: typeof SavedRoute
   SettingsRoute: typeof SettingsRoute
@@ -203,11 +242,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ResearchRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/practicals': {
+      id: '/practicals'
+      path: '/practicals'
+      fullPath: '/practicals'
+      preLoaderRoute: typeof PracticalsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/planner': {
       id: '/planner'
       path: '/planner'
       fullPath: '/planner'
       preLoaderRoute: typeof PlannerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/outcomes': {
+      id: '/outcomes'
+      path: '/outcomes'
+      fullPath: '/outcomes'
+      preLoaderRoute: typeof OutcomesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/notes': {
@@ -238,6 +291,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof EmailRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/deadlines': {
+      id: '/deadlines'
+      path: '/deadlines'
+      fullPath: '/deadlines'
+      preLoaderRoute: typeof DeadlinesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/chat': {
       id: '/chat'
       path: '/chat'
@@ -258,11 +318,14 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ChatRoute: ChatRoute,
+  DeadlinesRoute: DeadlinesRoute,
   EmailRoute: EmailRoute,
   HelpRoute: HelpRoute,
   HistoryRoute: HistoryRoute,
   NotesRoute: NotesRoute,
+  OutcomesRoute: OutcomesRoute,
   PlannerRoute: PlannerRoute,
+  PracticalsRoute: PracticalsRoute,
   ResearchRoute: ResearchRoute,
   SavedRoute: SavedRoute,
   SettingsRoute: SettingsRoute,

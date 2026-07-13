@@ -26,6 +26,7 @@ type Props<T> = {
   submitLabel?: string;
   examples?: { student?: string[]; professional?: string[] };
   onFillExample?: (example: string, setValues: (u: (v: T) => T) => void) => void;
+  renderAfterOutput?: (output: string, values: T) => ReactNode;
 };
 
 export function AIForm<T extends Record<string, unknown>>({
@@ -39,6 +40,7 @@ export function AIForm<T extends Record<string, unknown>>({
   submitLabel = "Generate with AI",
   examples,
   onFillExample,
+  renderAfterOutput,
 }: Props<T>) {
   const { role } = useRole();
   const [values, setValuesState] = useState<T>(initialValues);
@@ -120,6 +122,7 @@ export function AIForm<T extends Record<string, unknown>>({
           onRegenerate={run}
           onClear={() => setOutput("")}
         />
+        {output && renderAfterOutput?.(output, values)}
         <ResponsibleAI />
       </div>
     </div>

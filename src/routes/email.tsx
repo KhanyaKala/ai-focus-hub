@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Mail } from "lucide-react";
 import { PageShell } from "@/components/PageShell";
 import { AIForm } from "@/components/AIForm";
+import { SendActions } from "@/components/SendActions";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
@@ -62,6 +63,9 @@ Return only the email body in Markdown, starting with a subject line as a headin
             subject: v.subject || ex,
           }))
         }
+        renderAfterOutput={(output, values) => (
+          <SendActions output={output} recipient={values.recipient} fallbackSubject={values.subject} />
+        )}
       >
         {({ values, setValues, disabled }) => (
           <>
