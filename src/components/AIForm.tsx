@@ -122,6 +122,7 @@ export function AIForm<T extends Record<string, unknown>>({
           onRegenerate={run}
           onClear={() => setOutput("")}
         />
+        {output && renderAfterOutput?.(output, values)}
         <ResponsibleAI />
       </div>
     </div>
