@@ -41,6 +41,12 @@ const aiTools = [
 
 const studentTools = [
   { title: "Lecture Timetable", url: "/timetable", icon: CalendarDays },
+  { title: "Practicals", url: "/practicals", icon: FlaskConical },
+  { title: "Module Outcomes", url: "/outcomes", icon: Target },
+];
+
+const everyone = [
+  { title: "Deadlines & Countdowns", url: "/deadlines", icon: AlarmClock },
 ];
 
 const library = [
