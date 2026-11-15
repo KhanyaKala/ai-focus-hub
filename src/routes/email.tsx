@@ -2,13 +2,22 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Mail } from "lucide-react";
 import { PageShell } from "@/components/PageShell";
 import { AIForm } from "@/components/AIForm";
-import { SendActions } from "@/components/SendActions";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
 export const Route = createFileRoute("/email")({
+  head: () => ({
+    meta: [
+      { title: "Smart Email Generator | Productivity Hub AI" },
+      { name: "description", content: "Draft polished, editable emails with AI, then copy and paste them wherever you need." },
+      { property: "og:title", content: "Smart Email Generator | Productivity Hub AI" },
+      { property: "og:description", content: "Draft polished, editable emails with AI, then copy and paste them wherever you need." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+  }),
   component: EmailPage,
 });
 
@@ -63,9 +72,6 @@ Return only the email body in Markdown, starting with a subject line as a headin
             subject: v.subject || ex,
           }))
         }
-        renderAfterOutput={(output, values) => (
-          <SendActions output={output} recipient={values.recipient} fallbackSubject={values.subject} />
-        )}
       >
         {({ values, setValues, disabled }) => (
           <>
