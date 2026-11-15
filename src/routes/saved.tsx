@@ -7,6 +7,16 @@ import type { HistoryItem } from "@/lib/storage";
 import { AIOutput } from "@/components/AIOutput";
 
 export const Route = createFileRoute("/saved")({
+  head: () => ({
+    meta: [
+      { title: "Saved AI Documents | Productivity Hub AI" },
+      { name: "description", content: "Access and reuse your saved AI responses and productivity documents." },
+      { property: "og:title", content: "Saved AI Documents | Productivity Hub AI" },
+      { property: "og:description", content: "Access and reuse your saved AI responses and productivity documents." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+  }),
   component: SavedPage,
 });
 

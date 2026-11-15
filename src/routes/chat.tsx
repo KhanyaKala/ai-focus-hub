@@ -13,6 +13,16 @@ import { toast } from "sonner";
 import { ResponsibleAI } from "@/components/ResponsibleAI";
 
 export const Route = createFileRoute("/chat")({
+  head: () => ({
+    meta: [
+      { title: "AI Chatbot | Productivity Hub AI" },
+      { name: "description", content: "Chat with a role-aware AI assistant for study, work, planning, and ideas." },
+      { property: "og:title", content: "AI Chatbot | Productivity Hub AI" },
+      { property: "og:description", content: "Chat with a role-aware AI assistant for study, work, planning, and ideas." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+  }),
   component: ChatPage,
 });
 

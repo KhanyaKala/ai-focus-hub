@@ -6,6 +6,16 @@ import { Button } from "@/components/ui/button";
 import { useEffect, useState } from "react";
 
 export const Route = createFileRoute("/settings")({
+  head: () => ({
+    meta: [
+      { title: "Settings | Productivity Hub AI" },
+      { name: "description", content: "Personalise your role, appearance, and local Productivity Hub AI data." },
+      { property: "og:title", content: "Settings | Productivity Hub AI" },
+      { property: "og:description", content: "Personalise your role, appearance, and local Productivity Hub AI data." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+  }),
   component: SettingsPage,
 });
 

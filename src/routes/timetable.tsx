@@ -15,6 +15,16 @@ import { AIOutput } from "@/components/AIOutput";
 import { toast } from "sonner";
 
 export const Route = createFileRoute("/timetable")({
+  head: () => ({
+    meta: [
+      { title: "Lecture Timetable | Productivity Hub AI" },
+      { name: "description", content: "Organise your weekly lectures and generate a study plan around your class schedule." },
+      { property: "og:title", content: "Lecture Timetable | Productivity Hub AI" },
+      { property: "og:description", content: "Organise your weekly lectures and generate a study plan around your class schedule." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+  }),
   component: TimetablePage,
 });
 

@@ -8,6 +8,16 @@ import { Button } from "@/components/ui/button";
 import { AIOutput } from "@/components/AIOutput";
 
 export const Route = createFileRoute("/history")({
+  head: () => ({
+    meta: [
+      { title: "AI Activity History | Productivity Hub AI" },
+      { name: "description", content: "Review, reuse, and manage your recent AI-generated responses." },
+      { property: "og:title", content: "AI Activity History | Productivity Hub AI" },
+      { property: "og:description", content: "Review, reuse, and manage your recent AI-generated responses." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+  }),
   component: HistoryPage,
 });
 

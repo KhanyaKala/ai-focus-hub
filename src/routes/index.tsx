@@ -27,6 +27,16 @@ import { getHistory } from "@/lib/history";
 import type { HistoryItem } from "@/lib/storage";
 
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: "Productivity Hub AI | Personal productivity dashboard" },
+      { name: "description", content: "Organise study and work with personalised AI tools, tasks, notes, goals, and productivity insights." },
+      { property: "og:title", content: "Productivity Hub AI | Personal productivity dashboard" },
+      { property: "og:description", content: "Organise study and work with personalised AI tools, tasks, notes, goals, and productivity insights." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+  }),
   component: Dashboard,
 });
 

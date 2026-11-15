@@ -8,6 +8,16 @@ import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
 export const Route = createFileRoute("/planner")({
+  head: () => ({
+    meta: [
+      { title: "AI Task Planner | Productivity Hub AI" },
+      { name: "description", content: "Create a realistic daily or weekly plan from your goals, tasks, deadlines, and available time." },
+      { property: "og:title", content: "AI Task Planner | Productivity Hub AI" },
+      { property: "og:description", content: "Create a realistic daily or weekly plan from your goals, tasks, deadlines, and available time." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+  }),
   component: PlannerPage,
 });
 
