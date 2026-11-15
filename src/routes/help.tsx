@@ -3,6 +3,16 @@ import { HelpCircle } from "lucide-react";
 import { PageShell } from "@/components/PageShell";
 
 export const Route = createFileRoute("/help")({
+  head: () => ({
+    meta: [
+      { title: "Help & FAQ | Productivity Hub AI" },
+      { name: "description", content: "Find answers about role settings, local data, and using AI tools in Productivity Hub AI." },
+      { property: "og:title", content: "Help & FAQ | Productivity Hub AI" },
+      { property: "og:description", content: "Find answers about role settings, local data, and using AI tools in Productivity Hub AI." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+  }),
   component: HelpPage,
 });
 

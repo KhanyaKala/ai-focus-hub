@@ -6,6 +6,16 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 
 export const Route = createFileRoute("/notes")({
+  head: () => ({
+    meta: [
+      { title: "Meeting & Lecture Notes Summariser | Productivity Hub AI" },
+      { name: "description", content: "Turn lecture notes and meeting transcripts into clear, structured summaries and action items." },
+      { property: "og:title", content: "Meeting & Lecture Notes Summariser | Productivity Hub AI" },
+      { property: "og:description", content: "Turn lecture notes and meeting transcripts into clear, structured summaries and action items." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+  }),
   component: NotesPage,
 });
 

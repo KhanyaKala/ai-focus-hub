@@ -9,7 +9,19 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { useLocalState, uid } from "@/lib/storage";
 import { toast } from "sonner";
 
-export const Route = createFileRoute("/deadlines")({ component: DeadlinesPage });
+export const Route = createFileRoute("/deadlines")({
+  head: () => ({
+    meta: [
+      { title: "Deadlines & Countdowns | Productivity Hub AI" },
+      { name: "description", content: "Keep track of exams, assignments, and important dates with live countdowns." },
+      { property: "og:title", content: "Deadlines & Countdowns | Productivity Hub AI" },
+      { property: "og:description", content: "Keep track of exams, assignments, and important dates with live countdowns." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+  }),
+  component: DeadlinesPage,
+});
 
 type DeadlineKind = "Exam" | "Assignment" | "Project" | "Meeting" | "Other";
 type Deadline = { id: string; title: string; kind: DeadlineKind; dueAt: string; notes?: string };

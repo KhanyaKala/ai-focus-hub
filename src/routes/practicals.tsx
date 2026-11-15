@@ -14,7 +14,19 @@ import { toast } from "sonner";
 import ReactMarkdown from "react-markdown";
 import { roleContextLine, useRole } from "@/lib/role-context";
 
-export const Route = createFileRoute("/practicals")({ component: PracticalsPage });
+export const Route = createFileRoute("/practicals")({
+  head: () => ({
+    meta: [
+      { title: "Practical Manual Summaries | Productivity Hub AI" },
+      { name: "description", content: "Track upcoming student practicals and turn pasted lab manuals into study guides." },
+      { property: "og:title", content: "Practical Manual Summaries | Productivity Hub AI" },
+      { property: "og:description", content: "Track upcoming student practicals and turn pasted lab manuals into study guides." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+  }),
+  component: PracticalsPage,
+});
 
 type Practical = {
   id: string;

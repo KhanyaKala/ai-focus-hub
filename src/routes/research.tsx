@@ -8,6 +8,16 @@ import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
 export const Route = createFileRoute("/research")({
+  head: () => ({
+    meta: [
+      { title: "AI Research Assistant | Productivity Hub AI" },
+      { name: "description", content: "Explore a topic with a structured AI research overview, key findings, and further questions." },
+      { property: "og:title", content: "AI Research Assistant | Productivity Hub AI" },
+      { property: "og:description", content: "Explore a topic with a structured AI research overview, key findings, and further questions." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+  }),
   component: ResearchPage,
 });
 

@@ -15,7 +15,19 @@ import { generateAI } from "@/lib/ai.functions";
 import { toast } from "sonner";
 import ReactMarkdown from "react-markdown";
 
-export const Route = createFileRoute("/outcomes")({ component: OutcomesPage });
+export const Route = createFileRoute("/outcomes")({
+  head: () => ({
+    meta: [
+      { title: "Module Outcomes & Exam Prep | Productivity Hub AI" },
+      { name: "description", content: "Track learning outcomes by module and focus exam preparation on the topics still to cover." },
+      { property: "og:title", content: "Module Outcomes & Exam Prep | Productivity Hub AI" },
+      { property: "og:description", content: "Track learning outcomes by module and focus exam preparation on the topics still to cover." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+  }),
+  component: OutcomesPage,
+});
 
 type Outcome = { id: string; text: string; covered: boolean; note?: string };
 type Module = { id: string; name: string; code: string; outcomes: Outcome[]; plan?: string };
